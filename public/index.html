@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>يورو جلف لفحص وتسجيل المركبات</title>
+<meta name="description" content="يورو جلف لفحص وتسجيل المركبات ش.ذ.م.م – الفحص الفني وخدمات تسجيل المركبات في القوز الثالثة، دبي.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Tajawal:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --green:#0f8a5f;
+    --green-dark:#0a6646;
+    --green-soft:rgba(15,138,95,.10);
+    --green-bg:rgba(15,138,95,.08);
+    --ink:#0f1f19;
+    --muted:#5b6b64;
+    --white:#ffffff;
+    --card:#ffffff;
+    --line:rgba(15,31,25,.08);
+    --gray:#3a3f44;
+    --gray-2:#2d3135;
+    --gray-text:#c9cdd1;
+    --gold:#c9a24b;
+    --radius:18px;
+    --shadow:0 10px 30px rgba(10,60,40,.08);
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:"Tajawal","Cairo",system-ui,sans-serif;
+    color:var(--ink);
+    background:#eef7f2;
+    background-image:
+      radial-gradient(circle at 15% 10%, rgba(15,138,95,.14), transparent 40%),
+      radial-gradient(circle at 85% 60%, rgba(15,138,95,.10), transparent 45%),
+      linear-gradient(var(--green-bg), var(--green-bg));
+    line-height:1.8;
+    -webkit-font-smoothing:antialiased;
+  }
+  h1,h2,h3,h4{font-family:"Cairo",sans-serif;line-height:1.35}
+  a{color:inherit;text-decoration:none}
+  .wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+
+  /* ===== Header ===== */
+  header{
+    position:sticky;top:0;z-index:50;
+    background:var(--white);
+    border-bottom:1px solid var(--line);
+    box-shadow:0 2px 14px rgba(0,0,0,.04);
+  }
+  .nav{display:flex;align-items:center;justify-content:space-between;height:78px;gap:16px}
+  .logo{display:flex;align-items:center;gap:14px}
+  .logo svg{width:48px;height:48px;flex-shrink:0;filter:drop-shadow(0 6px 12px rgba(10,102,70,.25))}
+  .logo-text{display:flex;flex-direction:column;align-items:flex-start;line-height:1;padding-inline-start:14px;border-inline-start:1.5px solid rgba(15,31,25,.12)}
+  .logo-ar{font-family:"Cairo";font-weight:800;font-size:23px;color:var(--green-dark);letter-spacing:-.3px}
+  .logo-en{
+    font-family:"Cairo";font-weight:700;font-size:10.5px;letter-spacing:4.2px;
+    color:var(--gold);margin-top:7px;display:flex;align-items:center;gap:6px;direction:ltr
+  }
+  .logo-en::before,.logo-en::after{content:"";width:10px;height:1.5px;background:currentColor;opacity:.6}
+  .menu{display:flex;gap:28px;font-weight:600;font-size:15px}
+  .menu a{color:var(--ink);opacity:.8;transition:.2s}
+  .menu a:hover{opacity:1;color:var(--green)}
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--green);color:#fff;
+    padding:12px 24px;border-radius:999px;
+    font-weight:700;font-family:"Cairo";font-size:15px;
+    border:none;cursor:pointer;transition:.2s;
+    box-shadow:0 8px 20px rgba(15,138,95,.25);
+  }
+  .btn:hover{background:var(--green-dark);transform:translateY(-1px)}
+  .btn.ghost{background:#fff;color:var(--green-dark);box-shadow:none;border:1.5px solid rgba(15,138,95,.3)}
+  .burger{display:none;background:none;border:none;cursor:pointer;padding:8px}
+  .burger span{display:block;width:24px;height:2px;background:var(--ink);margin:5px 0;border-radius:2px}
+
+  /* ===== Hero ===== */
+  .hero{padding:80px 0 70px}
+  .hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:50px;align-items:center}
+  .badge{
+    display:inline-flex;align-items:center;gap:8px;
+    background:#fff;border:1px solid rgba(15,138,95,.2);
+    color:var(--green-dark);font-weight:700;font-size:13.5px;
+    padding:7px 16px;border-radius:999px;margin-bottom:22px;
+  }
+  .badge i{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.2)}
+  .hero h1{font-size:clamp(30px,4.6vw,50px);font-weight:800;margin-bottom:18px}
+  .hero h1 em{font-style:normal;color:var(--green)}
+  .hero p{font-size:18px;color:var(--muted);max-width:540px;margin-bottom:32px}
+  .hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-card{
+    background:#fff;border-radius:26px;padding:30px;box-shadow:var(--shadow);
+    border:1px solid var(--line);position:relative;overflow:hidden;
+  }
+  .hero-card::before{
+    content:"";position:absolute;inset:0 0 auto 0;height:6px;
+    background:linear-gradient(90deg,var(--green),var(--gold));
+  }
+  .hero-card h3{font-size:18px;margin-bottom:18px;display:flex;align-items:center;gap:10px}
+  .lic-row{display:flex;justify-content:space-between;gap:12px;padding:12px 0;border-bottom:1px dashed var(--line);font-size:15px}
+  .lic-row:last-child{border-bottom:none}
+  .lic-row span:first-child{color:var(--muted)}
+  .lic-row b{font-family:"Cairo"}
+  .pill{background:#e6f6ee;color:#13824f;font-weight:700;font-size:13px;padding:3px 12px;border-radius:999px}
+
+  /* ===== Sections ===== */
+  section{padding:70px 0}
+  .head{text-align:center;max-width:640px;margin:0 auto 46px}
+  .head small{color:var(--green);font-weight:700;letter-spacing:.5px;font-size:14px}
+  .head h2{font-size:clamp(26px,3.4vw,36px);margin:6px 0 12px}
+  .head p{color:var(--muted)}
+
+  .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}
+  .card{
+    background:var(--card);border-radius:var(--radius);padding:30px 26px;
+    border:1px solid var(--line);box-shadow:var(--shadow);transition:.25s;
+  }
+  .card:hover{transform:translateY(-4px);box-shadow:0 18px 40px rgba(10,60,40,.12)}
+  .ico{
+    width:58px;height:58px;border-radius:16px;
+    display:grid;place-items:center;margin-bottom:18px;
+    background:var(--green-soft);color:var(--green);
+  }
+  .ico svg{width:28px;height:28px}
+  .card h3{font-size:20px;margin-bottom:8px}
+  .card p{color:var(--muted);font-size:15.5px}
+  .card ul{list-style:none;margin-top:14px}
+  .card li{padding:5px 0;font-size:15px;display:flex;gap:8px;align-items:flex-start}
+  .card li::before{content:"✓";color:var(--green);font-weight:800}
+
+  /* Steps */
+  .steps{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;counter-reset:s}
+  .step{background:#fff;border-radius:var(--radius);padding:26px 22px;border:1px solid var(--line);position:relative}
+  .step::before{
+    counter-increment:s;content:counter(s);
+    font-family:"Cairo";font-weight:800;font-size:15px;
+    width:40px;height:40px;border-radius:50%;display:grid;place-items:center;
+    background:var(--green);color:#fff;margin-bottom:14px;
+  }
+  .step h4{font-size:17px;margin-bottom:6px}
+  .step p{color:var(--muted);font-size:14.5px}
+
+  /* FAQ */
+  .faq{max-width:820px;margin:0 auto}
+  .q{background:#fff;border:1px solid var(--line);border-radius:16px;margin-bottom:12px;overflow:hidden;transition:.2s}
+  .q.open{box-shadow:var(--shadow);border-color:rgba(15,138,95,.3)}
+  .q button{
+    width:100%;background:none;border:none;cursor:pointer;
+    display:flex;justify-content:space-between;align-items:center;gap:16px;
+    padding:20px 24px;text-align:right;
+    font-family:"Cairo";font-weight:700;font-size:16.5px;color:var(--ink);
+  }
+  .q button .pm{
+    width:30px;height:30px;border-radius:50%;flex-shrink:0;
+    background:var(--green-soft);color:var(--green);
+    display:grid;place-items:center;font-size:20px;transition:.25s;
+  }
+  .q.open .pm{transform:rotate(45deg);background:var(--green);color:#fff}
+  .a{max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .a p{padding:0 24px 20px;color:var(--muted);font-size:15.5px}
+
+  /* CTA band */
+  .cta{
+    background:linear-gradient(135deg,var(--green),var(--green-dark));
+    color:#fff;border-radius:28px;padding:50px 40px;
+    display:flex;justify-content:space-between;align-items:center;gap:24px;flex-wrap:wrap;
+    box-shadow:0 20px 50px rgba(10,102,70,.3);
+  }
+  .cta h2{font-size:clamp(22px,3vw,30px);margin-bottom:6px}
+  .cta p{opacity:.85}
+  .cta .btn{background:#fff;color:var(--green-dark)}
+
+  /* ===== Footer ===== */
+  footer{background:var(--gray);color:var(--gray-text);margin-top:40px}
+  .f-grid{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:40px;padding-top:60px;padding-bottom:40px}
+  .f-grid > div{min-width:0}
+  footer h4{color:#fff;font-size:17px;margin-bottom:18px}
+  footer p{font-size:14.5px}
+  .f-list{list-style:none}
+  .f-list li{display:flex;justify-content:space-between;gap:12px;padding:8px 0;border-bottom:1px solid rgba(255,255,255,.07);font-size:14px}
+  .f-list li span:first-child{opacity:.7}
+  .f-list li span:first-child{flex-shrink:0}
+  .f-list li b{color:#fff;font-weight:600;text-align:left;overflow-wrap:anywhere}
+  .f-addr{display:flex;gap:10px;font-size:14.5px;margin-bottom:12px}
+  .f-addr svg{width:20px;height:20px;flex-shrink:0;color:#7fd3b0;margin-top:3px}
+  .f-bottom{background:var(--gray-2);padding:18px 20px;font-size:13.5px;text-align:center;color:#9aa0a6}
+
+  /* ===== Responsive ===== */
+  @media (max-width:960px){
+    .hero-grid{grid-template-columns:1fr}
+    .grid-3{grid-template-columns:1fr 1fr}
+    .steps{grid-template-columns:1fr 1fr}
+    .f-grid{grid-template-columns:1fr 1fr}
+  }
+  @media (max-width:760px){
+    .menu,.nav .btn{display:none}
+    .burger{display:block}
+    .menu.show{
+      display:flex;flex-direction:column;gap:0;
+      position:absolute;top:78px;right:0;left:0;background:#fff;
+      border-bottom:1px solid var(--line);padding:8px 20px 16px;
+    }
+    .menu.show a{padding:12px 0;border-bottom:1px solid var(--line)}
+    .hero{padding:50px 0}
+    section{padding:50px 0}
+    .grid-3,.grid-2,.steps,.f-grid{grid-template-columns:1fr}
+    .cta{padding:34px 24px;text-align:center;justify-content:center}
+    .logo svg{width:42px;height:42px}
+    .logo-ar{font-size:20px}
+    .logo-text{padding-inline-start:11px}
+    .logo{gap:11px}
+  }
+  .f-links{display:flex;justify-content:center;gap:10px 22px;flex-wrap:wrap;margin-bottom:8px}
+  .f-links a{color:#d7dbdf;font-weight:600}
+  .f-links a:hover{color:#7fd3b0}
+</style>
+</head>
+<body>
+
+<!-- ===== Header ===== -->
+<header>
+  <div class="wrap nav">
+    <a href="#top" class="logo" aria-label="يورو جلف">
+      <!-- Logo -->
+      <svg viewBox="0 0 64 64" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="lg" x1="0" y1="0" x2="64" y2="64">
+            <stop offset="0" stop-color="#16a777"/>
+            <stop offset="1" stop-color="#075c3e"/>
+          </linearGradient>
+        </defs>
+        <rect x="2" y="2" width="60" height="60" rx="17" fill="url(#lg)"/>
+        <rect x="2.75" y="2.75" width="58.5" height="58.5" rx="16.3" stroke="#fff" stroke-opacity=".18" stroke-width="1.5"/>
+        <path d="M20.69 45.31 A16 16 0 1 1 43.31 45.31" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/>
+        <path d="M19.5 34h2.2M32 21.5v2.2M44.5 34h-2.2M23.2 25.2l1.5 1.5M40.8 25.2l-1.5 1.5" stroke="#fff" stroke-opacity=".7" stroke-width="2" stroke-linecap="round"/>
+        <path d="M32 34 L40.5 25.5" stroke="#d8b25a" stroke-width="4" stroke-linecap="round"/>
+        <circle cx="32" cy="34" r="4" fill="#fff"/>
+        <circle cx="32" cy="34" r="1.6" fill="#075c3e"/>
+        <path d="M26 50.5h12" stroke="#d8b25a" stroke-width="3" stroke-linecap="round"/>
+      </svg>
+      <div class="logo-text">
+        <span class="logo-ar">يورو جلف</span>
+        <span class="logo-en">EURO GULF</span>
+      </div>
+    </a>
+
+    <nav class="menu" id="menu">
+      <a href="#services">خدماتنا</a>
+      <a href="#why">لماذا نحن</a>
+      <a href="#steps">خطوات الخدمة</a>
+      <a href="#faq">الأسئلة الشائعة</a>
+      <a href="#contact">تواصل معنا</a>
+    </nav>
+    <a href="#contact" class="btn">احجز موعدك</a>
+    <button class="burger" aria-label="القائمة" onclick="document.getElementById('menu').classList.toggle('show')">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- ===== Hero ===== -->
+  <section class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <div class="badge"><i></i> مركز مرخّص من دائرة الاقتصاد والسياحة – دبي</div>
+        <h1>فحص فني دقيق و<em>تسجيل مركبتك</em> بكل سهولة وثقة</h1>
+        <p>في يورو جلف نقدّم خدمات الفحص الفني للمركبات وخدمات التسجيل في مكان واحد بالقوز الثالثة، بفريق متخصص وإجراءات واضحة توفّر وقتك.</p>
+        <div class="hero-cta">
+          <a href="#contact" class="btn">احجز موعد الفحص
+            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M15 6l-6 6 6 6"/></svg>
+          </a>
+          <a href="#services" class="btn ghost">تعرّف على خدماتنا</a>
+        </div>
+      </div>
+
+      <div class="hero-card">
+        <h3>
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#0f8a5f" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z"/><path d="M9 12l2 2 4-4"/></svg>
+          بيانات الترخيص
+        </h3>
+        <div class="lic-row"><span>وضع الرخصة</span><span class="pill">سارية</span></div>
+        <div class="lic-row"><span>رقم الرخصة</span><b>1593236</b></div>
+        <div class="lic-row"><span>الرخصة الموحدة</span><b>FB6164</b></div>
+        <div class="lic-row"><span>الشكل القانوني</span><b>ذات مسؤولية محدودة</b></div>
+        <div class="lic-row"><span>تاريخ الانتهاء</span><b>2027-05-05</b></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Services ===== -->
+  <section id="services">
+    <div class="wrap">
+      <div class="head">
+        <small>خدماتنا</small>
+        <h2>كل ما تحتاجه مركبتك تحت سقف واحد</h2>
+        <p>نشاطان أساسيان مرخّصان ومفعّلان، ننفّذهما بمعايير دقيقة وخدمة سريعة.</p>
+      </div>
+      <div class="grid-2">
+        <div class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/><path d="M8 11l2 2 4-4"/></svg>
+          </div>
+          <h3>الفحص الفني للمركبات</h3>
+          <p>فحص شامل لحالة المركبة للتأكد من مطابقتها لمتطلبات السلامة قبل التسجيل أو التجديد.</p>
+          <ul>
+            <li>فحص المكابح والإطارات ونظام التعليق</li>
+            <li>فحص الأضواء والإشارات والهيكل</li>
+            <li>تقرير واضح بنتيجة الفحص</li>
+          </ul>
+        </div>
+        <div class="card">
+          <div class="ico">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>
+          </div>
+          <h3>خدمات تسجيل المركبات</h3>
+          <p>إنجاز معاملات تسجيل المركبة بعد الفحص بخطوات منظمة ودون تعقيد.</p>
+          <ul>
+            <li>تجديد تسجيل المركبات</li>
+            <li>تسجيل المركبات الجديدة</li>
+            <li>مساعدة في تجهيز المستندات المطلوبة</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Why us ===== -->
+  <section id="why">
+    <div class="wrap">
+      <div class="head">
+        <small>لماذا يورو جلف</small>
+        <h2>تجربة فحص مختلفة</h2>
+      </div>
+      <div class="grid-3">
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></div>
+          <h3>توفير الوقت</h3>
+          <p>الفحص والتسجيل في مكان واحد، فلا حاجة للتنقل بين أكثر من جهة.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l8 3v6c0 5-3.4 9.4-8 11-4.6-1.6-8-6-8-11V5z"/></svg></div>
+          <h3>مركز مرخّص</h3>
+          <p>نعمل برخصة تجارية سارية صادرة من دائرة الاقتصاد والسياحة في دبي.</p>
+        </div>
+        <div class="card">
+          <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.9M16 3.1a4 4 0 0 1 0 7.8"/></svg></div>
+          <h3>فريق متخصص</h3>
+          <p>فنيون ذوو خبرة يشرحون لك نتيجة الفحص وأي ملاحظات على مركبتك.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Steps ===== -->
+  <section id="steps">
+    <div class="wrap">
+      <div class="head">
+        <small>كيف تتم الخدمة</small>
+        <h2>أربع خطوات بسيطة</h2>
+      </div>
+      <div class="steps">
+        <div class="step"><h4>احجز موعدك</h4><p>تواصل معنا لتحديد الوقت المناسب لك.</p></div>
+        <div class="step"><h4>أحضر مركبتك</h4><p>مع المستندات المطلوبة إلى مقرّنا بالقوز الثالثة.</p></div>
+        <div class="step"><h4>الفحص الفني</h4><p>يقوم فريقنا بفحص المركبة وإبلاغك بالنتيجة.</p></div>
+        <div class="step"><h4>إتمام التسجيل</h4><p>ننجز معاملة التسجيل وتستلم مركبتك جاهزة.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FAQ ===== -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="head">
+        <small>الأسئلة الشائعة</small>
+        <h2>إجابات لأكثر ما يسألنا عنه العملاء</h2>
+      </div>
+      <div class="faq" id="faqList">
+        <div class="q">
+          <button><span>ما الخدمات التي يقدمها مركز يورو جلف؟</span><span class="pm">+</span></button>
+          <div class="a"><p>نقدّم خدمتين أساسيتين: الفحص الفني للمركبات، وخدمات تسجيل المركبات، وكلاهما نشاط مرخّص ومفعّل ضمن رخصتنا التجارية.</p></div>
+        </div>
+        <div class="q">
+          <button><span>أين يقع المركز؟</span><span class="pm">+</span></button>
+          <div class="a"><p>في دبي – القوز الثالثة، مستودع رقم 1 ملك مؤسسة دبي العقارية – بر دبي، محل 1. التفاصيل الكاملة موجودة أسفل الصفحة.</p></div>
+        </div>
+        <div class="q">
+          <button><span>ما المستندات المطلوبة عند الحضور؟</span><span class="pm">+</span></button>
+          <div class="a"><p>عادةً ملكية المركبة الحالية، وهوية مالك المركبة، ووثيقة تأمين سارية. قد تختلف المتطلبات حسب نوع المعاملة، لذا ننصح بالتواصل معنا قبل الحضور للتأكد.</p></div>
+        </div>
+        <div class="q">
+          <button><span>هل أحتاج إلى حجز موعد مسبق؟</span><span class="pm">+</span></button>
+          <div class="a"><p>يُفضّل الحجز المسبق لتقليل وقت الانتظار، ويسعدنا استقبالك في أوقات العمل حسب توفر المواعيد.</p></div>
+        </div>
+        <div class="q">
+          <button><span>ماذا يحدث إذا لم تجتز المركبة الفحص؟</span><span class="pm">+</span></button>
+          <div class="a"><p>نوضّح لك الملاحظات التي ظهرت في الفحص بالتفصيل، وبعد إصلاحها يمكنك إعادة الفحص لاستكمال التسجيل.</p></div>
+        </div>
+        <div class="q">
+          <button><span>كم يستغرق الفحص والتسجيل؟</span><span class="pm">+</span></button>
+          <div class="a"><p>تختلف المدة حسب نوع المركبة والمعاملة وازدحام اليوم، وهدفنا دائماً إنجاز الخدمة في أقصر وقت ممكن دون التأثير على دقة الفحص.</p></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== CTA ===== -->
+  <section>
+    <div class="wrap">
+      <div class="cta">
+        <div>
+          <h2>جاهز لفحص مركبتك؟</h2>
+          <p>زرنا في القوز الثالثة أو تواصل معنا لحجز موعدك.</p>
+        </div>
+        <a href="#contact" class="btn">تواصل معنا الآن</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ===== Footer ===== -->
+<footer id="contact">
+  <div class="wrap f-grid">
+    <div>
+      <div class="logo" style="margin-bottom:18px">
+        <svg viewBox="0 0 64 64" fill="none">
+          <rect x="2" y="2" width="60" height="60" rx="17" fill="#0f8a5f"/>
+          <path d="M20.69 45.31 A16 16 0 1 1 43.31 45.31" stroke="#fff" stroke-width="4.5" stroke-linecap="round"/>
+          <path d="M19.5 34h2.2M32 21.5v2.2M44.5 34h-2.2M23.2 25.2l1.5 1.5M40.8 25.2l-1.5 1.5" stroke="#fff" stroke-opacity=".7" stroke-width="2" stroke-linecap="round"/>
+          <path d="M32 34 L40.5 25.5" stroke="#d8b25a" stroke-width="4" stroke-linecap="round"/>
+          <circle cx="32" cy="34" r="4" fill="#fff"/>
+          <circle cx="32" cy="34" r="1.6" fill="#0f8a5f"/>
+          <path d="M26 50.5h12" stroke="#d8b25a" stroke-width="3" stroke-linecap="round"/>
+        </svg>
+        <div class="logo-text" style="border-color:rgba(255,255,255,.15)">
+          <span class="logo-ar" style="color:#fff">يورو جلف</span>
+          <span class="logo-en">EURO GULF</span>
+        </div>
+      </div>
+      <p>مركز متخصص في الفحص الفني للمركبات وخدمات تسجيل المركبات في دبي.</p>
+      <div style="margin-top:20px">
+        <div class="f-addr">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s-7-6.2-7-12a7 7 0 0 1 14 0c0 5.8-7 12-7 12z"/><circle cx="12" cy="10" r="2.5"/></svg>
+          <span>مستودع رقم 1 ملك مؤسسة دبي العقارية – بر دبي – القوز الثالثة<br>محل 1، القوز الثالثة، دبي – الإمارات</span>
+        </div>
+        <!-- أضف رقم الهاتف والبريد هنا -->
+        <div class="f-addr">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg>
+          <span>رقم الهاتف</span>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <h4>بيانات الرخصة</h4>
+      <ul class="f-list">
+        <li><span>الاسم التجاري</span><b>يورو جلف لفحص وتسجيل المركبات ش.ذ.م.م</b></li>
+        <li><span>رقم الرخصة</span><b>1593236</b></li>
+        <li><span>الرخصة الموحدة</span><b>FB6164</b></li>
+        <li><span>نوع الرخصة</span><b>تجارية</b></li>
+        <li><span>الشكل القانوني</span><b>ذات مسؤولية محدودة</b></li>
+      </ul>
+    </div>
+
+    <div>
+      <h4>الإصدار والأنشطة</h4>
+      <ul class="f-list">
+        <li><span>سلطة الإصدار</span><b>دائرة الاقتصاد والسياحة</b></li>
+        <li><span>تاريخ الإصدار</span><b>2026-05-06</b></li>
+        <li><span>تاريخ الانتهاء</span><b>2027-05-05</b></li>
+        <li><span>النشاط 1</span><b>الفحص الفني للمركبات</b></li>
+        <li><span>النشاط 2</span><b>خدمات تسجيل المركبات</b></li>
+      </ul>
+    </div>
+  </div>
+  <div class="f-bottom">
+    <nav class="f-links">
+      <a href="index.html">الرئيسية</a>
+      <a href="privacy.html">سياسة الخصوصية</a>
+      <a href="terms.html">الشروط والأحكام</a>
+    </nav>
+    © <span id="yr"></span> يورو جلف لفحص وتسجيل المركبات ش.ذ.م.م – جميع الحقوق محفوظة
+  </div>
+</footer>
+
+<script>
+  document.getElementById('yr').textContent = new Date().getFullYear();
+  document.querySelectorAll('#faqList .q').forEach(function(q){
+    q.querySelector('button').addEventListener('click', function(){
+      var a = q.querySelector('.a');
+      var open = q.classList.toggle('open');
+      a.style.maxHeight = open ? a.scrollHeight + 'px' : null;
+    });
+  });
+  document.querySelectorAll('#menu a').forEach(function(l){
+    l.addEventListener('click', function(){ document.getElementById('menu').classList.remove('show'); });
+  });
+</script>
+</body>
+</html>
