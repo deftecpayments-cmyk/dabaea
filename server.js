@@ -25,5 +25,5 @@ app.get('/health', (req, res) => res.json({ status: 'ok' }));
 app.use((req, res) => res.status(404).sendFile(path.join(PUBLIC_DIR, 'index.html')));
 
 app.listen(PORT, '0.0.0.0', () => {
-  console.log(`Euro Gulf site running on port ${PORT}`);
+  console.log(`Euro Gulf Admin & Consulting site running on port ${PORT}`);
 });
